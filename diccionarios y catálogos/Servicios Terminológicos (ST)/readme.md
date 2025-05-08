@@ -7,10 +7,10 @@ Además, representan un componente fundamental en el marco de la [Historia Clín
 ## Guía tecnica de los ST
 La guía técnica de estos servicios tiene como objetivo detallar los pasos necesarios para acceder e implementar los ST disponibles. En ella se presenta información sobre los servicios disponibles y se incluyen ejemplos para su utilización.
 
-El área Salud Digital de Agesic ofrece de manera gratuita el acceso al Servidor terminológico para las instituciones de salud interesadas del territorio nacional. Para solicitarlo, es necesario contactarse mediante el correo electrónico de [hcen@agesic.gub.uy](mailito:hcen@agesic.gub.uy), donde se proporcionará la información necesaria para su adopción.
+El área Salud Digital de Agesic ofrece de manera gratuita el acceso al Servidor terminológico para las instituciones de salud interesadas del territorio nacional. Para solicitarlo, es necesario contactarse mediante el correo electrónico de [hcen@agesic.gub.uy](mailto:hcen@agesic.gub.uy), donde se proporcionará la información necesaria para su adopción.
 
----
+
 ## Guía técnica de servicios terminológicos v.3.3
 
 **Última actualización:**  diciembre 2024
----
+
