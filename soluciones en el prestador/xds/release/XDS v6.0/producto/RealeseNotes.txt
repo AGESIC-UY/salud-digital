@@ -1,0 +1,16 @@
+Realese notes BUS Version 6.0
+
+
+- Se hacen los consumos con el location
+
+- Cambio de parámetros para realizar consumos
+
+- El repositorio ahora envía los mensajes de error en idioma español
+
+- Se cambia el largo de los campos QMessageDocumentID y DocumentUniqueId
+
+- Incluye fix en la query de documentos, permitiendo filtrar por lista de ejes
+
+- Se agrega ITI57 a la qmessage
+
+- Se actualizó la versión de desarrollo a Gx 18 u5 generando con jdk17 desplegado en Wildfly 25.

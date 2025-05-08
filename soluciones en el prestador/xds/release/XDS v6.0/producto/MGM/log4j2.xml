@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+	
+	<Properties>
+		<Property name="LS">${sys:file.separator}</Property>
+		<Property name="logPath">log${LS}</Property>
+		<Property name="logFilePath">${logPath}clientXDSBUS.log</Property>
+	</Properties>
+	
+	<Appenders>
+		
+		<RollingFile name="RollingFile" fileName="${logFilePath}" filePattern="${logPath}old${LS}app-%d{yyyy-MM-dd-HH}-%i.log.gz">
+			<PatternLayout>
+				<Pattern>%d{ISO8601} [%t] %-5p %c - %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="10 MB"/>
+			</Policies>
+		</RollingFile>
+			
+		<Syslog name="SYSLOG-TCP" host="localhost" port="514" mdcId="mdc"
+            protocol="TCP" appName="" 
+            facility="LOCAL0" newLine="true" enterpriseNumber="18060" 
+            format="RFC5424" connectTimeoutMillis="1000" ignoreExceptions="false" >
+			 <RegexFilter regex=" &lt;[0-9][0-9][0-9]>[0-9] [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T.*" onMatch="ACCEPT" onMismatch="DENY"/>
+		</Syslog>
+
+	</Appenders>
+	
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="RollingFile"/>
+			<AppenderRef ref="SYSLOG-TCP" level="INFO"/>
+		</Root>
+		<logger name="com.genexus" level="DEBUG" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+		</logger>
+		<!-- User custom Logging !-->
+		<logger name="GeneXusUserLog" level="DEBUG" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+			<AppenderRef ref="SYSLOG-TCP" level="INFO"/>
+		</logger>
+	</Loggers>
+	
+</Configuration>

@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:ihe:iti:xds-b:2007" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="aqueryregistry_servicesService" targetNamespace="urn:ihe:iti:xds-b:2007">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns1="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" version="1.0">
+
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"/>
+
+  <xs:element name="RegistryErrorList" type="tns:RegistryErrorList"/>
+
+  <xs:element name="RequestSlotList" type="ns1:SlotList"/>
+
+  <xs:complexType final="extension restriction" name="RegistryErrorList">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="RegistryError" type="tns:RegistryError"/>
+    </xs:sequence>
+    <xs:attribute name="highestSeverity" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="RegistryError">
+    <xs:sequence/>
+    <xs:attribute name="codeContext" type="xs:string"/>
+    <xs:attribute name="errorCode" type="xs:string"/>
+    <xs:attribute name="location" type="xs:string"/>
+    <xs:attribute name="severity" type="xs:string"/>
+  </xs:complexType>
+
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" version="1.0">
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+
+  <xs:element name="AdhocQuery" type="tns:AdhocQueryType"/>
+
+  <xs:element name="RegistryObjectList" type="tns:RegistryObjectListType"/>
+
+  <xs:complexType final="extension restriction" name="SlotList">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="Slot">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="ValueList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="slotType" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="AdhocQueryType">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="RegistryObjectListType">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="ExtrinsicObject" type="tns:ExtrinsicObject"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="RegistryPackage" type="tns:RegistryPackage"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Classification" type="tns:Classification"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Association" type="tns:Association"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="ExtrinsicObject">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" minOccurs="0" name="Description" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Classification" type="tns:Classification"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="ExternalIdentifier" type="tns:ExternalIdentifier"/>
+    </xs:sequence>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="isOpaque" type="xs:boolean" use="required"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="mimeType" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="InternationalStringType">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="LocalizedString" type="tns:LocalizedString"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="LocalizedString">
+    <xs:sequence/>
+    <xs:attribute name="charset" type="xs:string"/>
+    <xs:attribute ref="xml:lang"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="Classification">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+    </xs:sequence>
+    <xs:attribute name="classificationNode" type="xs:string"/>
+    <xs:attribute name="classificationScheme" type="xs:string"/>
+    <xs:attribute name="classifiedObject" type="xs:string"/>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="nodeRepresentation" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="ExternalIdentifier">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+    </xs:sequence>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="identificationScheme" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="registryObject" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="RegistryPackage">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" minOccurs="0" name="Description" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Classification" type="tns:Classification"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="ExternalIdentifier" type="tns:ExternalIdentifier"/>
+    </xs:sequence>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="Association">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+    </xs:sequence>
+    <xs:attribute name="associationType" type="xs:string"/>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="sourceObject" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="targetObject" type="xs:string"/>
+  </xs:complexType>
+
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns1="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" version="1.0">
+
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"/>
+
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"/>
+
+  <xs:element name="AdhocQueryRequest" type="tns:AdhocQueryRequest"/>
+
+  <xs:element name="AdhocQueryResponse" type="tns:AdhocQueryResponse"/>
+
+  <xs:complexType final="extension restriction" name="AdhocQueryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:RequestSlotList"/>
+      <xs:element form="qualified" minOccurs="0" name="ResponseOption" type="tns:ResponseOptionType"/>
+      <xs:element minOccurs="0" ref="ns1:AdhocQuery"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="comment" type="xs:string"/>
+    <xs:attribute name="federated" type="xs:boolean" use="required"/>
+    <xs:attribute name="federation" type="xs:string"/>
+    <xs:attribute name="startIndex" type="xs:int" use="required"/>
+    <xs:attribute name="maxResults" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="ResponseOptionType">
+    <xs:sequence/>
+    <xs:attribute name="returnType" type="xs:string"/>
+    <xs:attribute name="returnComposedObjects" type="xs:boolean" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="AdhocQueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:RegistryErrorList"/>
+      <xs:element minOccurs="0" ref="ns1:RegistryObjectList"/>
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="requestId" type="xs:string"/>
+    <xs:attribute name="startIndex" type="xs:int" use="required"/>
+    <xs:attribute name="totalResultCount" type="xs:int" use="required"/>
+  </xs:complexType>
+
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:ihe:iti:xds-b:2007" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:ns1="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" elementFormDefault="unqualified" targetNamespace="urn:ihe:iti:xds-b:2007" version="1.0">
+
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"/>
+
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"/>
+
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"/>
+
+  <xs:element name="RegistryStoredQuery" type="tns:RegistryStoredQuery"/>
+
+  <xs:element name="RegistryStoredQueryResponse" type="tns:RegistryStoredQueryResponse"/>
+
+  <xs:complexType name="RegistryStoredQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:AdhocQueryRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RegistryStoredQueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:AdhocQueryResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/XML/1998/namespace" version="1.0">
+
+  <xs:attribute name="lang" type="xs:string"/>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistryStoredQuery">
+    <wsdl:part element="tns:RegistryStoredQuery" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegistryStoredQueryResponse">
+    <wsdl:part element="tns:RegistryStoredQueryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="aqueryregistry">
+    <wsdl:operation name="RegistryStoredQuery">
+      <wsdl:input message="tns:RegistryStoredQuery" name="RegistryStoredQuery">
+    </wsdl:input>
+      <wsdl:output message="tns:RegistryStoredQueryResponse" name="RegistryStoredQueryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="aqueryregistry_servicesServiceSoapBinding" type="tns:aqueryregistry">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RegistryStoredQuery">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="RegistryStoredQuery">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RegistryStoredQueryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="aqueryregistry_servicesService">
+    <wsdl:port binding="tns:aqueryregistry_servicesServiceSoapBinding" name="aqueryregistryPort">
+      <soap:address location="http://localhost:8330/RegistroXDS/aqueryregistry_services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

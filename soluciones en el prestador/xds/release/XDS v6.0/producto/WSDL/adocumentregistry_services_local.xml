@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:ihe:iti:xds-b:2007" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="adocumentregistry_servicesService" targetNamespace="urn:ihe:iti:xds-b:2007">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns1="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"/>
+  <xs:element name="RegistryResponse" type="tns:RegistryResponse"/>
+  <xs:complexType final="extension restriction" name="RegistryResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="ResponseSlotList" type="ns1:SlotList"/>
+      <xs:element form="qualified" minOccurs="0" name="RegistryErrorList" type="tns:RegistryErrorList"/>
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="requestId" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="RegistryErrorList">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="RegistryError" type="tns:RegistryError"/>
+    </xs:sequence>
+    <xs:attribute name="highestSeverity" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="RegistryError">
+    <xs:sequence/>
+    <xs:attribute name="codeContext" type="xs:string"/>
+    <xs:attribute name="errorCode" type="xs:string"/>
+    <xs:attribute name="location" type="xs:string"/>
+    <xs:attribute name="severity" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xs:element name="RegistryObjectList" type="tns:RegistryObjectListType"/>
+  <xs:complexType final="extension restriction" name="RegistryObjectListType">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="ExtrinsicObject" type="tns:ExtrinsicObject"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="RegistryPackage" type="tns:RegistryPackage"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Classification" type="tns:Classification"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Association" type="tns:Association"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="ExtrinsicObject">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" minOccurs="0" name="Description" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Classification" type="tns:Classification"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="ExternalIdentifier" type="tns:ExternalIdentifier"/>
+    </xs:sequence>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="isOpaque" type="xs:boolean" use="required"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="mimeType" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="Slot">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="ValueList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="slotType" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="InternationalStringType">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="LocalizedString" type="tns:LocalizedString"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="LocalizedString">
+    <xs:sequence/>
+    <xs:attribute name="charset" type="xs:string"/>
+    <xs:attribute ref="xml:lang"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="Classification">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+    </xs:sequence>
+    <xs:attribute name="classificationNode" type="xs:string"/>
+    <xs:attribute name="classificationScheme" type="xs:string"/>
+    <xs:attribute name="classifiedObject" type="xs:string"/>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="nodeRepresentation" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="ExternalIdentifier">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+    </xs:sequence>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="identificationScheme" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="registryObject" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="RegistryPackage">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+      <xs:element form="qualified" minOccurs="0" name="Name" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" minOccurs="0" name="Description" type="tns:InternationalStringType"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Classification" type="tns:Classification"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="ExternalIdentifier" type="tns:ExternalIdentifier"/>
+    </xs:sequence>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="Association">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+    </xs:sequence>
+    <xs:attribute name="associationType" type="xs:string"/>
+    <xs:attribute name="home" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="lid" type="xs:string"/>
+    <xs:attribute name="objectType" type="xs:string"/>
+    <xs:attribute name="sourceObject" type="xs:string"/>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="targetObject" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType final="extension restriction" name="SlotList">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Slot" type="tns:Slot"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns1="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"/>
+  <xs:element name="SubmitObjectsRequest" type="tns:SubmitObjectsRequest"/>
+  <xs:complexType final="extension restriction" name="SubmitObjectsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:RegistryObjectList"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:ihe:iti:xds-b:2007" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns1="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:ihe:iti:xds-b:2007">
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"/>
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"/>
+  <xs:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"/>
+  <xs:element name="RegisterDocumentSet" type="tns:RegisterDocumentSet"/>
+  <xs:element name="RegistryResponse" type="tns:RegistryResponse"/>
+  <xs:element name="RegistryResponseUpdate" type="tns:RegistryResponseUpdate"/>
+  <xs:element name="UpdateDocumentSet" type="tns:UpdateDocumentSet"/>
+  <xs:complexType name="UpdateDocumentSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:SubmitObjectsRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegistryResponseUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns3:RegistryResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegisterDocumentSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:SubmitObjectsRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegistryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns3:RegistryResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/XML/1998/namespace" version="1.0">
+
+  <xs:attribute name="lang" type="xs:string"/>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterDocumentSetResponse">
+    <wsdl:part element="tns:RegistryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentSetResponse">
+    <wsdl:part element="tns:RegistryResponseUpdate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentSet">
+    <wsdl:part element="tns:UpdateDocumentSet" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegisterDocumentSet">
+    <wsdl:part element="tns:RegisterDocumentSet" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="adocumentregistry">
+    <wsdl:operation name="UpdateDocumentSet">
+      <wsdl:input message="tns:UpdateDocumentSet" name="UpdateDocumentSet">
+    </wsdl:input>
+      <wsdl:output message="tns:UpdateDocumentSetResponse" name="UpdateDocumentSetResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDocumentSet">
+      <wsdl:input message="tns:RegisterDocumentSet" name="RegisterDocumentSet">
+    </wsdl:input>
+      <wsdl:output message="tns:RegisterDocumentSetResponse" name="RegisterDocumentSetResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="adocumentregistry_servicesServiceSoapBinding" type="tns:adocumentregistry">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UpdateDocumentSet">
+      <soap:operation soapAction="urn:ihe:iti:2008:UpdateDocumentSet" style="document"/>
+      <wsdl:input name="UpdateDocumentSet">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateDocumentSetResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDocumentSet">
+      <soap:operation soapAction="urn:ihe:iti:2007:RegisterDocumentSet-b" style="document"/>
+      <wsdl:input name="RegisterDocumentSet">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RegisterDocumentSetResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="adocumentregistry_servicesService">
+    <wsdl:port binding="tns:adocumentregistry_servicesServiceSoapBinding" name="adocumentregistryPort">
+      <soap:address location="http://localhost:8330/RegistroXDS/adocumentregistry_services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
