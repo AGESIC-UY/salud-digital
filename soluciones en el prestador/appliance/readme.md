@@ -24,4 +24,4 @@ El **Appliance** es un componente fundamental que cumple múltiples funciones, s
 
 ## 🆕 Última Versión
 
-- **Appliance v9.0 (2024)** – [Descargar release notes]  
+- **Appliance v9.0 (2024)** 
