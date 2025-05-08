@@ -1,6 +1,12 @@
 # XDS versión 6.0:
 **Última actualización:** junio 2023  
 
+## Producto
+
+**Última actualización:** diciembre 2024
+
+**Descripción:** Carpeta de instalación del producto XDS contiene todo el material necesario para llevar a cabo la instalación o actualización del mismo.
+
 
 ## Guía producto XDS v.6.0 v.1.0
 
@@ -23,8 +29,3 @@
 **Descripción:** El objetivo del documento es describir los pasos necesarios para la actualización del producto XDS partiendo de versiones anteriores del mismo (hasta 4.0).
 
 
-## Producto
-
-**Última actualización:** diciembre 2024
-
-**Descripción:** Carpeta de instalación del producto XDS contiene todo el material necesario para llevar a cabo la instalación o actualización del mismo.

@@ -1,27 +1,27 @@
-# 馃З Appliance
+# Appliance
 
-El **Appliance** es un componente fundamental que cumple m煤ltiples funciones, siendo una de las principales la **publicaci贸n de servicios normalizados y estandarizados**. Su objetivo es facilitar la **integraci贸n de los sistemas inform谩ticos de los prestadores de salud** con los servicios de informaci贸n de la plataforma de salud.
+El **Appliance** es un componente fundamental que cumple múltiples funciones, siendo una de las principales la **publicación de servicios normalizados y estandarizados**. Su objetivo es facilitar la **integración de los sistemas informáticos de los prestadores de salud** con los servicios de información de la plataforma de salud.
 
 ---
 
-## 馃敆 Rol y Funcionalidades
+## Rol y Funcionalidades
 
 - Oficia de **puerta de acceso** a la plataforma de salud.
 - Se encuentra desplegado en cada prestador que desea utilizar los servicios de Salud Digital.
 - Publica servicios estandarizados para facilitar la interoperabilidad.
 - Permite el acceso a:
-  - Historia Cl铆nica Electr贸nica Nacional (HCEN)
+  - Historia Clínica Electrónica Nacional (HCEN)
   - Sistema de novedades
-  - Servidor terminol贸gico
-- Mantiene **altos est谩ndares de seguridad**, gracias al m贸dulo de autorizaci贸n y autenticaci贸n contra la **Plataforma de Gobierno Electr贸nico (PGE)**.
+  - Servidor terminológico
+- Mantiene **altos estándares de seguridad**, gracias al módulo de autorización y autenticación contra la **Plataforma de Gobierno Electrónico (PGE)**.
 - Opera en tres ambientes:
   - Test
-  - Preproducci贸n
-  - Producci贸n
+  - Preproducción
+  - Producción
 
 ---
 
 
-## 馃啎 脷ltima Versi贸n
+## última Versión
 
 - **Appliance v9.0 (2024)** 
