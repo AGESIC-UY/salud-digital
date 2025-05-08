@@ -1,11 +1,11 @@
-# Appliance, Producto XDS y HCEO.
+# CMD, Bloques Semánticos y Ontología de Documentos
 
-**Soluciones en el prestador** agrupa el conjunto de herramientas que le facilitan a los prestadores de salud la integración con la plataforma de Historia Clínica Electrónica Nacional (HCEN), así como la implementación de perfiles de interoperabilidad internacionales.
+Los **modelos de información** permiten organizar y estructurar los datos de forma estandarizada, facilitando el intercambio e interpretación de documentos clínicos entre los distintos prestadores de salud.
 
 En este repositorio encontrarás contenido relacionado con:
 
-- Appliance 
-- Producto XDS. 
-- Historia Clínica Electrónica Oncologica (HCEO). 
+- Conjunto Mínimo de Datos (CMD)  
+- Bloques semánticos  
+- Ontología de documentos  
 
 📬 Para consultas, podés dirigirte a:  [saluddigital@agesic.gub.uy](mailto:saluddigital@agesic.gub.uy)
