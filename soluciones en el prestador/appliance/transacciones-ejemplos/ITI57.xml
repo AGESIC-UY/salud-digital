@@ -1,0 +1,66 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ihe:iti:xds-b:2007" xmlns:urn1="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:urn2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<urn:UpdateDocumentSet>
+			<urn1:SubmitObjectsRequest>
+				<urn2:RegistryObjectList>
+
+					<!-- DOCUMENT ENTRY -->
+					<urn2:ExtrinsicObject home="?" id="?" isOpaque="?" lid="?" mimeType="?" objectType="?" status="?">
+
+						<!-- SLOTS ATNA -->
+	
+						<!-- N° DE ORDEN DE LA PETICION --> 
+						<urn2:Slot name="CPOE" slotType="?">
+						<urn2:ValueList>
+						<urn2:Value>1234586</urn2:Value>
+						</urn2:ValueList>
+						</urn2:Slot>
+	
+						<!-- AUTOR DE LA PETICION -->						
+						<urn2:Slot name="authorPerson" slotType="?">
+						<urn2:ValueList>
+						<urn2:Value>12345678^Test^Nombre^^^Dr. &amp;2.16.858.2.10000675.68909&amp;ISO</urn2:Value>
+						</urn2:ValueList>
+						</urn2:Slot>
+
+						<!-- ID APLICACION QUE GENERO LA PETICION -->
+						<urn2:Slot name="OIDApplication" slotType="?">
+						<urn2:ValueList>
+						<urn2:Value>2.16.858.2.10014165.72768.1</urn2:Value>
+						</urn2:ValueList>
+						</urn2:Slot>
+	
+						
+						<urn2:Slot name="observation" slotType="?">
+						<urn2:ValueList>
+						<urn2:Value>esto es una observacion</urn2:Value>
+						</urn2:ValueList>
+						</urn2:Slot>
+						
+					</urn2:ExtrinsicObject>
+
+
+					<!-- ASOCIACION DONDE SE CAMBIA EL ESTADO DEL DOCUMENTO -->
+					<urn2:Association targetObject="2.16.858.2.10001442.67430.20231031103500.112.1">
+
+						<!-- ESTADO ORIGINAL DEL DOCUMENTO -->
+						<urn2:Slot name="OriginalStatus">
+							<urn2:ValueList>
+								<urn2:Value>urn:oasis:names:tc:ebxml-regrep:StatusType:Approved</urn2:Value>
+							</urn2:ValueList>
+						</urn2:Slot>
+	
+						<!-- NUEVO ESTADO DEL DOCUMENTO -->
+						<urn2:Slot name="NewStatus">
+							<urn2:ValueList>
+								<urn2:Value>urn:oasis:names:tc:ebxml-regrep:StatusType:Deprecated</urn2:Value>
+							</urn2:ValueList>
+						</urn2:Slot>
+					</urn2:Association>
+					
+				</urn2:RegistryObjectList>
+			</urn1:SubmitObjectsRequest>
+		</urn:UpdateDocumentSet>
+	</soapenv:Body>
+</soapenv:Envelope>

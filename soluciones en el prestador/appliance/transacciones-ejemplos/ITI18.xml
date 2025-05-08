@@ -1,0 +1,57 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ihe:iti:xds-b:2007" xmlns:urn1="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:urn2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:urn3="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:RegistryStoredQuery>
+         <!--Optional:-->
+         <urn1:AdhocQueryRequest id="0" comment="0" federated="false" federation="" startIndex="0" maxResults="0">
+            <!--Optional:-->
+            <urn2:RequestSlotList>
+               <!--Zero or more repetitions:-->
+               
+              <urn3:Slot name="CPOE" slotType="0">
+				<urn3:ValueList>
+					<urn3:Value>El CPOE</urn3:Value>
+				</urn3:ValueList>
+			</urn3:Slot>
+				
+			<urn3:Slot name="authorPerson" slotType="0">
+				<urn3:ValueList>
+					<urn3:Value>111111</urn3:Value>
+				</urn3:ValueList>
+			</urn3:Slot>
+						
+			<urn3:Slot name="OIDApplication" slotType="0">
+				<urn3:ValueList>
+					<urn3:Value>OIDApplication</urn3:Value>
+				</urn3:ValueList>
+			</urn3:Slot>
+				
+               
+            </urn2:RequestSlotList>
+            <!--Optional:-->
+            <urn1:ResponseOption returnType="LeafClass" returnComposedObjects="true"/>
+            <!--Optional:-->
+            
+            <urn3:AdhocQuery id="urn:uuid:14d4debf-8f97-4251-9a74-a90016b0af0d" home="0" lid="0" objectType="0" status="0">
+               <!--Zero or more repetitions:-->
+               
+               <urn3:Slot name="$XDSDocumentEntryPatientId" slotType="0">
+                  <!--Optional:-->
+                  <urn3:ValueList>
+                     <!--Zero or more repetitions:-->
+                     <urn3:Value>201706064444449^^^&amp;2.16.858.2.10002752.72768.1&amp;ISO</urn3:Value>
+                    </urn3:ValueList>
+               </urn3:Slot>
+              <!--Zero or more repetitions:-->
+              
+              
+               <urn3:Slot name="$XDSDocumentEntryStatus" slotType="0">
+                 <urn3:ValueList>
+                    <urn3:Value>urn:oasis:names:tc:ebxml-regrep:StatusType:Approved</urn3:Value>
+                </urn3:ValueList>
+              </urn3:Slot>
+            </urn3:AdhocQuery>
+         </urn1:AdhocQueryRequest>
+      </urn:RegistryStoredQuery>
+   </soapenv:Body>
+</soapenv:Envelope>

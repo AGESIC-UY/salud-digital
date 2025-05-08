@@ -1,0 +1,67 @@
+********************************************
+
+Realese notes componentes del Appliance
+
+- Se realizó un cambio de software base. Esto implica que ahora todas  utiliza las siguientes tecnologías:
+
+	- Wildfly-25.0.1.Final
+	- OpenJDK 17
+	- PostgresSQL 15.2 
+	- GeneXus 18u5
+
+********************************************
+
+Realese notes AppliancePS Version 9.0
+
+- Cambio de software base
+
+- Se agrega el método ObtenerOfertaTextosMultisubset al servicio de terminología.
+
+- El método GestionTerminologiaV2_ObtenerCodigoSNMapeo ya no se presenta más en el servicio de terminología.
+  En su lugar se debe utilizar el método: GestionTerminologia_obtenerCodigoSNMapeo
+  
+- Para el servicio agestionpacientesgoldenrecord_services, se le agregó al método consultarGoldenRecord un wrapper, por lo tanto el request queda la siguiente manera:
+	<inus:consultarGoldenRecord>
+        <pDocAssigningAuthorityOID></pDocAssigningAuthorityOID>
+        <pNroDocumento></pNroDocumento>
+    </inus:consultarGoldenRecord>
+
+********************************************
+
+Realese notes Validador Version 8.0
+
+- Cambio de software base
+
+- Ahora los métodos de consulta y validación de CDA se presentan como servicios distintos.
+	- Método de validación: https://[host:puerto]/ValidadorCDA/avalidarcda_services?wsdl
+	- Método de consulta: https://[host:puerto]/ValidadorCDA/aconsultarcda_services?wsdl
+
+- Se utiliza una nueva configuración para la validación, la cual sigue un esquema xml y ya no es más por BD.
+
+- La configuración de la validación hora está centralizada en el ValidadorCentral, y existe un demonio en cada appliance para actualizarla cada determinado tiempo.
+
+********************************************
+
+Realese notes Módulo de extracción de datos (MED) Version 3.0
+
+- Cambio de software base
+
+********************************************
+
+Realese notes Notificacion Version 8.0
+
+- Cambio de software base
+
+********************************************
+
+Realese notes MRx Version 3.0
+
+- Cambio de software base
+
+********************************************
+
+Realese notes ProxyPGE
+
+- Cambio de software base
+
+********************************************

@@ -1,0 +1,56 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="urn:ihe:iti:xds-b:2007" xmlns:urn="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns:urn1="urn:ihe:iti:xds-b:2007">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <app:RetrieveDocumentSetRequest>
+         <!--Zero or more repetitions:-->
+         <urn:Slot name="id" slotType="1">
+            <!--Optional:-->
+            <urn:ValueList>
+               <!--Zero or more repetitions:-->
+               <urn:Value>1</urn:Value>
+            </urn:ValueList>
+         </urn:Slot>
+
+
+
+<urn:Slot name="CPOE" slotType="0">
+	<urn:ValueList>
+		<urn:Value>El CPOE</urn:Value>
+	</urn:ValueList>
+</urn:Slot>
+
+<urn:Slot name="ROLE" slotType="0">
+	<urn:ValueList>
+		<urn:Value>ROLE</urn:Value>
+	</urn:ValueList>
+</urn:Slot>
+
+<urn:Slot name="OIDApplication" slotType="0">
+	<urn:ValueList>
+		<urn:Value>OIDApplication</urn:Value>
+	</urn:ValueList>
+</urn:Slot>
+<urn:Slot name="authorPerson" slotType="0">
+	<urn:ValueList>
+		<urn:Value>111111</urn:Value>
+	</urn:ValueList>
+</urn:Slot>
+
+<urn:Slot name="ApplicationId" slotType="0">
+	<urn:ValueList>
+		<urn:Value>ApplicationId slot</urn:Value>
+	</urn:ValueList>
+</urn:Slot>
+         
+         <!--Zero or more repetitions:-->
+         <urn1:DocumentRequest>
+            <!--Optional:-->
+            <urn1:HomeCommunityId>2.16.858.2.10000675.73183.1</urn1:HomeCommunityId>
+            <!--Optional:-->
+            <urn1:RepositoryUniqueId>2.16.858.2.10000005.71867.2</urn1:RepositoryUniqueId>
+            <!--Optional:-->
+            <urn1:DocumentUniqueId>1.89.89060320732418.1</urn1:DocumentUniqueId>
+         </urn1:DocumentRequest>
+      </app:RetrieveDocumentSetRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
