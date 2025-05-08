@@ -1,44 +1,44 @@
 # Recursos sobre XDS
 
-En esta seccion se encuentran disponibles documentos tecnicos clave relacionados con el componente **XDS**, definidos en el marco de la Historia Clinica Electronica Nacional por el equipo de **Salud Digital de Agesic**.
+En esta sección se encuentran disponibles documentos técnicos clave relacionados con el componente **XDS**, definidos en el marco de la Historia Clínica Electrónica Nacional por el equipo de **Salud Digital de Agesic**.
 
 ---
 
-## Guia tecnica de metadatos XDS v.26.0
+## Guía técnica de metadatos XDS v.26.0
 
-**Ultima actualizacion:** junio 2023  
+**Última actualización:** junio 2023  
 
-**Descripcion:**  
-Este documento tiene como objetivo **definir y documentar los metadatos XDS** analizados y consensuados por Salud Digital. Sirve como referencia para asegurar la interoperabilidad y correcta estructuracion de los documentos clinicos intercambiados en el ecosistema digital de salud.
+**Descripción:**  
+Este documento tiene como objetivo **definir y documentar los metadatos XDS** analizados y consensuados por Salud Digital. Sirve como referencia para asegurar la interoperabilidad y correcta estructuración de los documentos clínicos intercambiados en el ecosistema digital de salud.
 
 ---
 
 ## Modelo de casos de uso XDS v.3.0
 
-**Ultima actualizacion:** enero 2025  
+**Última actualización:** enero 2025  
 
-**Descripcion:**  
-El documento describe los **casos de uso principales del componente XDS** en el contexto de la HCEN. Los casos se agrupan segUn el **actor principal** involucrado, y constituyen una guia practica para la implementacion y entendimiento funcional del producto XDS en escenarios reales del sistema de salud.
-
----
-
-## Modulo de auditoria ATNA v.1.0
-
-**Ultima actualizacion:** octubre 2019  
-
+**Descripción:**  
+El documento describe los **casos de uso principales del componente XDS** en el contexto de la HCEN. Los casos se agrupan según el **actor principal** involucrado, y constituyen una guía práctica para la implementación y entendimiento funcional del producto XDS en escenarios reales del sistema de salud.
 
 ---
 
-## Modulo de control de datos v.1.0
+## Módulo de auditoría ATNA v.1.0
 
-**Ultima actualizacion:** octubre 2019  
+**Última actualización:** octubre 2019  
 
 
 ---
 
-## Modulo de gestion de mensajeria v.2.0
+## Módulo de control de datos v.1.0
 
-**Ultima actualizacion:** octubre 2019  
+**Última actualización:** octubre 2019  
+
+
+---
+
+## Módulo de gestión de mensajería v.2.0
+
+**Última actualización:** octubre 2019  
 
 
 ---
